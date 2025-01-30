@@ -5,7 +5,7 @@ from langchain import PromptTemplate
 import streamlit as st
 import os
 
-os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY']
+os.environ['GOOGLE_API_KEY'] = st.secrets['GOOGLE_API_KEY'] # comes from streamlit cloud from secrets
 
 # Create prompt template for generating tweets
 
@@ -16,11 +16,12 @@ tweet_prompt = PromptTemplate(template = tweet_template, input_variables = ['num
 # Initialize Google's Gemini model
 gemini_model = ChatGoogleGenerativeAI(model = "gemini-1.5-flash-latest")
 
-
 # Create LLM chain using the prompt template and model
 tweet_chain = tweet_prompt | gemini_model
 
 
+
+# Code for Front End
 import streamlit as st
 
 st.header("Tweet Generator")
