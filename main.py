@@ -22,8 +22,6 @@ tweet_chain = tweet_prompt | gemini_model
 
 
 # Code for Front End
-import streamlit as st
-
 st.header("Tweet Generator")
 
 st.subheader("Generate tweets using Generative AI")
